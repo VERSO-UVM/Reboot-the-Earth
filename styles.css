@@ -32,21 +32,6 @@ body {
 .dev-banner strong { color: #7d4e00; }
 .dev-banner p { color: #5a3e00; margin: 0; }
 
-/* ── Site Header Bar ────────────────────────────────── */
-.site-header {
-  background: white;
-  border-bottom: 1px solid var(--border);
-  padding: 14px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-.site-header a { color: var(--un-blue); text-decoration: none; }
-.site-header a:hover { text-decoration: underline; }
-.site-header strong { color: var(--text); }
-
 /* ── Nav ────────────────────────────────────────────── */
 nav {
   background: var(--bg-light);
@@ -55,6 +40,7 @@ nav {
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 nav a {
   color: #222;
@@ -67,15 +53,17 @@ nav a {
   transition: color 0.15s, background 0.15s;
 }
 nav a:hover { color: var(--un-blue); background: #ebebeb; }
-nav a.home { font-weight: 700; }
+nav a.home { font-weight: 700; margin-right: auto; }
 nav a.active { color: var(--un-blue); border-bottom-color: var(--un-blue); font-weight: 600; }
 
 /* ── Index Page Header ──────────────────────────────── */
 header {
-  background: white;
-  padding: 40px 24px 36px;
-  border-bottom: 1px solid var(--border);
-  max-width: 100%;
+  background-color: #1a2a3a;
+  background-image: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('img/campus-aerial.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  padding: 64px 24px 56px;
+  border-bottom: 3px solid var(--un-blue);
 }
 .header-inner {
   max-width: 900px;
@@ -96,14 +84,14 @@ header {
 header h1 {
   font-size: clamp(1.9rem, 5vw, 3rem);
   font-weight: 700;
-  color: var(--text);
+  color: white;
   margin-bottom: 12px;
   line-height: 1.15;
 }
 header h1 span { color: var(--un-blue); }
 header .subtitle {
   font-size: 1.05rem;
-  color: var(--muted);
+  color: rgba(255,255,255,0.85);
   max-width: 600px;
   margin-bottom: 28px;
 }
@@ -113,19 +101,19 @@ header .subtitle {
   gap: 12px;
 }
 .event-meta .pill {
-  background: var(--bg-light);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
   border-radius: 2px;
   padding: 8px 16px;
   font-size: 0.88rem;
-  color: var(--text);
+  color: white;
 }
 .event-meta .pill strong {
   display: block;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: rgba(255,255,255,0.65);
 }
 
 /* ── Inner Page Hero ────────────────────────────────── */
@@ -190,6 +178,20 @@ a:hover { text-decoration: underline; }
   color: #5a3e00;
 }
 .warn-box strong { display: block; margin-bottom: 4px; }
+
+/* ── Section Bands (full-width tinted sections) ─────── */
+.section-band {
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 52px 24px;
+}
+.section-band-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* Remove default section margin-bottom when inside a band */
+.section-band section { margin-bottom: 0; }
 
 /* ── About Grid ─────────────────────────────────────── */
 .about-grid {
@@ -286,6 +288,25 @@ footer {
 footer p + p { margin-top: 6px; }
 footer a { color: var(--un-blue); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
+
+/* ── Photos ──────────────────────────────────────────── */
+.hero-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
+  border-bottom: 3px solid var(--un-blue);
+}
+.page-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  margin-bottom: 32px;
+  border-bottom: 3px solid var(--un-blue);
+}
 
 /* ── Checklist (teams page) ─────────────────────────── */
 .checklist {
